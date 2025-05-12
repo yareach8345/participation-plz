@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div class="shadow-neumorphism">
+<div class="shadow-neumorphism p-2 rounded-lg border-thin border-white m-2">
   <slot></slot>
 </div>
 </template>

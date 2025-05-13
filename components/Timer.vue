@@ -16,15 +16,17 @@ const props = withDefaults(defineProps<Props>(), {
 
 const currentTime = ref(new Date())
 
-if(import.meta.client) {
-  const handler = setInterval(() => {
-    currentTime.value = new Date()
-  }, 1000)
+onMounted(() => {
+  if(import.meta.client) {
+    const handler = setInterval(() => {
+      currentTime.value = new Date()
+    }, 1000)
 
-  onUnmounted(() => {
-    clearInterval(handler)
-  })
-}
+    onUnmounted(() => {
+      clearInterval(handler)
+    })
+  }
+})
 
 const time = computed(() => {
   const sec = (props.gatheringTime.getTime() - currentTime.value.getTime()) / 1000

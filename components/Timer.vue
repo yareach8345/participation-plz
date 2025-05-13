@@ -66,7 +66,7 @@ const timeColor = computed(() => {
 
 <template>
   <client-only>
-    <div :class="[timeColor]">{{timeString}}</div>
+    <span :class="[timeColor]">{{timeString}}</span>
   </client-only>
 </template>
 

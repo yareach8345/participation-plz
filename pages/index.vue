@@ -9,11 +9,11 @@ const selectValue = reactive({
   <main class="flex flex-col items-center">
     <verse-viewer
         verse="마 18:19-20"
-        content="진실로 다시 너희에게 이르노니 너희 중에 두 사람이 땅에서 합심하여 무엇이든지 구하면 하늘에 계신 내 아버지께서 저희를 위하여 이루게 하시리라 두 세 사람이 내 이름으로 모인 곳에는 나도 그들 중에 있느니라"
+        content="진실로 다시 너희에게 이르노니 너희 중에 두 사람이 땅에서 합심하여 무엇이든지 구하면 하늘에 계신 내 아버지께서 저희를 위하여 이루게 하시리라 **두 세 사람이 내 이름으로 모인 곳에는 나도 그들 중에 있느니라**"
         description="모이라는 의미"
-        class="md:w-[75%] lg:w-[50%]"
+        class="md:w-[75%] 2xl:w-[50%]"
     />
-    <neumorphism-box class="w-[100%]">
+    <neumorphism-box class="w-[100%] m-7">
       <question
           object="오늘 식사"
           interrogative="참석하시나요?"

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { renderMarkdown } from '@/utils/markdown'
+
 interface Props {
   verse: string
   content: string
@@ -6,11 +8,13 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const compiledContent = computed(() => renderMarkdown(props.content))
 </script>
 
 <template>
   <NeumorphismBox>
-    <div class="break-keep p-3">{{props.content}}</div>
+    <div class="break-keep p-3" v-html="compiledContent"/>
     <div><b>{{props.verse}}</b></div>
     <template v-if="props.description !== undefined">
       <hr class="border-thin m-1"/>

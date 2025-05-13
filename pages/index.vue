@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const selectValue = reactive({
-  dinner: undefined,
-  gathering: undefined
+  dinner: undefined as boolean | undefined,
+  gathering: undefined as boolean | undefined,
 })
 </script>
 

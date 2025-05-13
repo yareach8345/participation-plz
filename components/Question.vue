@@ -19,12 +19,12 @@ const negativeBtnClicked = () => {
 }
 
 const predicate = computed(() => {
-  if(model.undefined === undefined) return interrogative
-  return model.value ? positivePredicate : negativePredicated
+  if(model.value === undefined) return interrogative
+  return model.value ? positivePredicate : negativePredicate
 })
 
 const predicateColor = computed(() => {
-  if(model.undefined === undefined) return ""
+  if(model.value === undefined) return ""
   return model.value ? "text-yes" : "text-no"
 })
 </script>

@@ -65,12 +65,23 @@ const state = computed<SurveyState>(() => {
       </question>
 
       <div
-          class="text-2xl text-yellow-600 mt-6"
-          v-show="state.exception"
+          class="text-2xl text-yellow-600 mt-6 duration-150 flex justify-center items-center"
+          :class="{
+            'scale-y-0': !state.exception
+          }"
       >
+        <span class="m-2 font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert-icon lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </span>
         먹튀인가요?
       </div>
-      <submit-button class="w-[40%] sm:w-[30%] md:w-[20%] my-6" :disabled="!state.submitable"/>
+      <submit-button
+          class="w-[40%] sm:w-[30%] md:w-[20%] my-6 duration-150"
+          :class="{
+            'hover:-translate-y-1/4': state.submitable
+          }"
+          :disabled="!state.submitable"
+      />
     </neumorphism-box>
   </main>
 </template>

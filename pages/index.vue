@@ -3,6 +3,33 @@ const selectValue = reactive({
   dinner: undefined as boolean | undefined,
   gathering: undefined as boolean | undefined,
 })
+
+interface SurveyState {
+  submitable: boolean,
+  exception: boolean,
+}
+
+const state = computed<SurveyState>(() => {
+  if(selectValue.dinner === undefined || selectValue.gathering === undefined) {
+    console.log("undefined")
+    return {
+      submitable: false,
+      exception: false,
+    }
+  } else if(selectValue.dinner === true && selectValue.gathering === false) {
+    console.log("no select")
+    return {
+      submitable: false,
+      exception: true,
+    }
+  } else {
+    console.log("select")
+    return {
+      submitable: true,
+      exception: false,
+    }
+  }
+})
 </script>
 
 <template>
@@ -37,7 +64,13 @@ const selectValue = reactive({
         </template>
       </question>
 
-      <submit-button class="w-[15%] mt-7 mb-4" />
+      <div
+          class="text-2xl text-yellow-600 mt-6"
+          v-show="state.exception"
+      >
+        먹튀인가요?
+      </div>
+      <submit-button class="w-[40%] sm:w-[30%] md:w-[20%] my-6" :disabled="!state.submitable"/>
     </neumorphism-box>
   </main>
 </template>

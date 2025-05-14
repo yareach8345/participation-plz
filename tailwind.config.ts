@@ -4,6 +4,7 @@ export default <Partial<Config>>{
     theme: {
         extend: {
             colors: {
+                link: '#1565C0',
                 'n-bg': '#ECF0F3',
                 'n-light-shadow': '#FFF',
                 'n-dark-shadow': '#D1D9E6',
@@ -11,6 +12,8 @@ export default <Partial<Config>>{
                 no: '#EF5350',
             },
             backgroundColor: {
+                link: '#E3F2FD',
+                'link-hover': '#BBDEFB',
                 neumorphism: 'theme("colors.n-bg")',
                 yes: '#B9F6CA',
                 no: '#FFCDD2',

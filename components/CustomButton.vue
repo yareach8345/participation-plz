@@ -1,11 +1,19 @@
 <script setup lang="ts">
+interface Props {
+  disabled?: boolean;
+}
+
 interface Emits {
   (e: 'click'): void,
   (e: 'mouseenter'): void,
   (e: 'mouseleave'): void,
 }
 
-const emits = defineEmits<Emits>();
+const props = withDefaults(defineProps<Props>(), {
+  disabled: false
+})
+
+const emits = defineEmits<Emits>()
 </script>
 
 <template>
@@ -14,6 +22,7 @@ const emits = defineEmits<Emits>();
       @click="emits('click')"
       @mouseenter="emits('mouseenter')"
       @mouseleave="emits('mouseleave')"
+      :disabled="props.disabled"
   >
     <slot></slot>
   </button>

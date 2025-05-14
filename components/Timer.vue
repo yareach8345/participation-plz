@@ -57,7 +57,7 @@ const timeColor = computed(() => {
   } if(time.value.hours === 0) {
     return "text-red-500"
   } if(time.value.hours < 3) {
-    return "text-red-500"
+    return "text-yellow-600"
   } else {
     return ""
   }

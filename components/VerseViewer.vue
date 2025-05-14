@@ -14,7 +14,7 @@ const compiledContent = computed(() => renderMarkdown(props.content))
 
 <template>
   <NeumorphismBox>
-    <div class="break-keep p-3" v-html="compiledContent"/>
+    <div class="break-keep p-3 text-lg" v-html="compiledContent"/>
     <div><b>{{props.verse}}</b></div>
     <template v-if="props.description !== undefined">
       <hr class="border-thin m-1"/>
